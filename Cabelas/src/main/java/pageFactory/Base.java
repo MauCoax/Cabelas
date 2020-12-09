@@ -32,22 +32,7 @@ public class Base {
 		return driver;
 	}
 
-	// driver de IE
-	public WebDriver driverIE() {
-		System.setProperty("webdriver.ie.driver", "drivers\\IEDriverServer.exe");
-		DesiredCapabilities cappabilities = DesiredCapabilities.internetExplorer();
-		cappabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-		cappabilities.setCapability("platform", "WIN8");
-		cappabilities.setCapability("version", "11");
-		cappabilities.setCapability("browserName", "internet explorer");
-		cappabilities.setCapability("ignoreProtectedModeSettings", 1);
-		cappabilities.setCapability("nativeEvents", "false");
-		cappabilities.setCapability("requireWindowFocus", "true");
-		driver = new InternetExplorerDriver(cappabilities);
-		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-		driver.manage().window().maximize();
-		return driver;
-	}
+	
 
 
 }
