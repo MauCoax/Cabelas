@@ -15,6 +15,7 @@ import org.testng.annotations.AfterTest;
 import pages.signInPage;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -35,7 +36,7 @@ public class SiginsuccessTest {
 		  //driver.close();
 	  }	
 	
-	@Test(priority = 0)
+	@Test
 	public void signinsuccess() throws InterruptedException {
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -52,7 +53,8 @@ public class SiginsuccessTest {
 		
 		WebElement signbutton = signinpage.signbutton();
 		signbutton.click();
-	
+		
+		
 		System.out.println("Usuario ingreso a su cuenta con exito");
 		
 	}

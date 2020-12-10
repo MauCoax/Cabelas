@@ -12,6 +12,7 @@ public class signInPage extends Base {
 	By email = By.xpath("//input[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1']");
 	By password = By.xpath("//input[@id='Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1']");
 	By signinButton = By.id("Header_GlobalLogin_WC_AccountDisplay_links_2");
+	By errorMessage = By.xpath("//div[@id='bp-alert-textId']");
 	
 
 	public signInPage(WebDriver driver) {
@@ -45,6 +46,13 @@ public class signInPage extends Base {
 		WebElement signbutton = findElement(signinButton);
 		
 		return signbutton;
+	}
+	
+	public WebElement errormessage() {
+		
+		WebElement errormessage = findElement(errorMessage);
+		
+		return errormessage;
 	}
 
 }
