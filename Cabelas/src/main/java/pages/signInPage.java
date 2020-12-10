@@ -8,10 +8,10 @@ import pageFactory.*;
 
 public class signInPage extends Base {
 	
-	By signinLink = By.cssSelector(".Header_GlobalLogin_signInQuickLink");
-	By email = By.cssSelector("#Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1");
-	By password = By.cssSelector("#Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1");
-	By signinButton = By.cssSelector("#Header_GlobalLogin_WC_AccountDisplay_links_2");
+	By signinLink = By.id("Header_GlobalLogin_signInQuickLink");
+	By email = By.xpath("/html[1]/body[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]");
+	By password = By.xpath("/html[1]/body[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[3]/input[1]");
+	By signinButton = By.id("Header_GlobalLogin_WC_AccountDisplay_links_2");
 	
 
 	public signInPage(WebDriver driver) {
