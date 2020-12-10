@@ -28,10 +28,12 @@ public class Base {
 
 	// driver de firefox
 	public WebDriver driverFirefox() {
-		System.setProperty("webdriver.gecko.driver", "drivers\\geckodriver.exe");
-		driver = new FirefoxDriver();
-		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-		driver.manage().window().maximize();
+		/*
+		 * System.setProperty("webdriver.gecko.driver", "drivers\\geckodriver.exe");
+		 * driver = new FirefoxDriver();
+		 * driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+		 * driver.manage().window().maximize();
+		 */
 		return driver;
 	}
 

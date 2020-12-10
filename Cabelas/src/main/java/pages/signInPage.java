@@ -33,7 +33,7 @@ public class signInPage extends Base {
 		return emailUser;
 	}
 	
-	public WebElement password() {
+	public WebElement passwordUser() {
 		
 		WebElement passwordUser = findElement(password);
 		
