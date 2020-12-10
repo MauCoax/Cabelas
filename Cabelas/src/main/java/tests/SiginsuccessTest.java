@@ -11,19 +11,22 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import pages.signInPage;
 
+
 public class SiginsuccessTest {
 	private WebDriver driver;
 	signInPage signinpage;
 	
 	@BeforeTest
 	public void beforeTest() {
+		signinpage = new signInPage(driver);
+		driver = signinpage.driverChrome();
 		
 		
 	}
 	
 	@AfterTest
 	  public void afterTest() {
-		 // driver.close();
+		  driver.close();
 	  }	
 	
 	@Test(priority = 0)
@@ -39,5 +42,6 @@ public class SiginsuccessTest {
 		signbutton.click();
 		
 	}
+	
 
 }
