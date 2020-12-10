@@ -37,23 +37,23 @@ public class SiginsuccessTest {
 	
 	@Test(priority = 0)
 	public void signinsuccess() throws InterruptedException {
-		WebDriverWait wait=new WebDriverWait(driver, 20);
+		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
 		WebElement signlink = signinpage.signinlink();
-		
-		//WebElement user = signinpage.emailUser();
-		//WebElement pass = signinpage.passwordUser();
-		//WebElement signbutton = signinpage.signbutton();
-		
 		signlink.click();
+		
+	
+		WebElement user = signinpage.emailUser();
+		user.sendKeys("maumoralestestapplaudo@gmail.com");
+		
+		WebElement pass = signinpage.passwordUser();
+		pass.sendKeys("testapplaudo2pass");
+		
 		WebElement signbutton = signinpage.signbutton();
-		
-		
-		//wait.until(ExpectedConditions.presenceOfElementLocated((By) signbutton));
-		//user.sendKeys("maumoralestestapplaudo@gmail.com");
-		//pass.sendKeys("testapplaudo1pass");
-
 		signbutton.click();
+	
+		System.out.println("Usuario ingreso a su cuenta con exito");
 		
 	}
 	
