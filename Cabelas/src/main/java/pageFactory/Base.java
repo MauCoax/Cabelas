@@ -21,7 +21,7 @@ public class Base {
 	public WebDriver driverChrome() {
 		System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+		driver.get("https://www.cabelas.com/shop/en#");
 		driver.manage().window().maximize();
 		return driver;
 	}
@@ -31,7 +31,7 @@ public class Base {
 		/*
 		 * System.setProperty("webdriver.gecko.driver", "drivers\\geckodriver.exe");
 		 * driver = new FirefoxDriver();
-		 * driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+		 * driver.get("https://www.cabelas.com/shop/en#");
 		 * driver.manage().window().maximize();
 		 */
 		return driver;
