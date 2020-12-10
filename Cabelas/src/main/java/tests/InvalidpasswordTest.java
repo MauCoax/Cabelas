@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import pages.signInPage;
 
-public class InvalidaccountTest {
+public class InvalidpasswordTest {
 	private WebDriver driver;
 	signInPage signinpage;
 	
@@ -38,10 +38,10 @@ public class InvalidaccountTest {
 		
 	
 		WebElement user = signinpage.emailUser();
-		user.sendKeys("maumolestestapplaudo@gmail.com");
+		user.sendKeys("maumoralestestapplaudo@gmail.com");
 		
 		WebElement pass = signinpage.passwordUser();
-		pass.sendKeys("testapplaudo2pass");
+		pass.sendKeys("errorpass");
 		
 		WebElement signbutton = signinpage.signbutton();
 		signbutton.click();
@@ -49,7 +49,7 @@ public class InvalidaccountTest {
 		WebElement error = signinpage.errormessage();
 		boolean condition = error.isDisplayed();
 		Assert.assertTrue(condition);
-		System.out.println("Usuario con cuenta incorrecta");
+		System.out.println("Usuario con contrasena incorrecta");
 		
 	}
 }
