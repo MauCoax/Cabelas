@@ -1,17 +1,17 @@
 package tests;
 
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeTest;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
 import pages.signInPage;
 
-
-
-
-public class SiginsuccessTest {
+public class EmptyPassTest {
 	private WebDriver driver;
 	signInPage signinpage;
 	
@@ -30,7 +30,7 @@ public class SiginsuccessTest {
 	
 	@Test
 	public void signinsuccess() throws InterruptedException {
-		System.out.println(driver.getTitle());
+		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 		WebElement signlink = signinpage.signinlink();
@@ -40,16 +40,15 @@ public class SiginsuccessTest {
 		WebElement user = signinpage.emailUser();
 		user.sendKeys("maumoralestestapplaudo@gmail.com");
 		
-		WebElement pass = signinpage.passwordUser();
-		pass.sendKeys("passapplaudotest1");
 		
 		WebElement signbutton = signinpage.signbutton();
 		signbutton.click();
 		
-		System.out.println(driver.getTitle());
-		System.out.println("Usuario ingreso a su cuenta con exito");
+		WebElement error = signinpage.errormessage();
+		boolean condition = error.isDisplayed();
+		Assert.assertTrue(condition);
+		System.out.println("Usuario no ha ingresado contrasena");
 		
 	}
-	
 
 }

@@ -41,7 +41,7 @@ public class InvalidaccountTest {
 		user.sendKeys("maumolestestapplaudo@gmail.com");
 		
 		WebElement pass = signinpage.passwordUser();
-		pass.sendKeys("testapplaudo2pass");
+		pass.sendKeys("passapplaudotest1");
 		
 		WebElement signbutton = signinpage.signbutton();
 		signbutton.click();
