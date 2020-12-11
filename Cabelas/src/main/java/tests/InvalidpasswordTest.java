@@ -5,7 +5,9 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -15,7 +17,7 @@ public class InvalidpasswordTest {
 	private WebDriver driver;
 	signInPage signinpage;
 	
-	@BeforeTest
+	@BeforeMethod
 	public void beforeTest() {
 		signinpage = new signInPage(driver);
 		driver = signinpage.driverChrome();
@@ -23,9 +25,9 @@ public class InvalidpasswordTest {
 		
 	}
 	
-	@AfterTest
+	@AfterMethod
 	  public void afterTest() {
-		  //driver.close();
+		  driver.close();
 	  }	
 	
 	@Test
@@ -47,6 +49,7 @@ public class InvalidpasswordTest {
 		signbutton.click();
 		
 		WebElement error = signinpage.errormessage();
+		
 		boolean condition = error.isDisplayed();
 		Assert.assertTrue(condition);
 		System.out.println("Usuario con contrasena incorrecta");

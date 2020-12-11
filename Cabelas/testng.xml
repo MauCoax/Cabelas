@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SuiteLogin">
+  <test thread-count="1" name="TestLogin">
+    <classes>
+      <class name="tests.InvalidaccountTest"/>
+      <class name="tests.InvalidAccountandPassTest"/>
+      <class name="tests.InvalidpasswordTest"/>
+      <class name="tests.EmptyAccountTest"/>
+      <class name="tests.SiginsuccessTest"/>
+      <class name="tests.EmptyPassTest"/>
+    </classes>
+  </test> <!-- TestLogin -->
+</suite> <!-- SuiteLogin -->

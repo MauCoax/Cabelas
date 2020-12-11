@@ -5,7 +5,9 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -15,7 +17,7 @@ public class EmptyPassTest {
 	private WebDriver driver;
 	signInPage signinpage;
 	
-	@BeforeTest
+	@BeforeMethod	
 	public void beforeTest() {
 		signinpage = new signInPage(driver);
 		driver = signinpage.driverChrome();
@@ -23,9 +25,9 @@ public class EmptyPassTest {
 		
 	}
 	
-	@AfterTest
+	@AfterMethod
 	  public void afterTest() {
-		  //driver.close();
+		  driver.close();
 	  }	
 	
 	@Test
@@ -46,7 +48,9 @@ public class EmptyPassTest {
 		
 		WebElement error = signinpage.errormessage();
 		boolean condition = error.isDisplayed();
+		System.out.println(error.getText());
 		Assert.assertTrue(condition);
+		Assert.assertEquals(error.getText(), "Please provide a valid password.");
 		System.out.println("Usuario no ha ingresado contrasena");
 		
 	}
